@@ -29,7 +29,7 @@ class release_3_0_0 extends \phpbb\db\migration\migration
 			['config.add', ['notes', '50']],
 
 			['module.add', [
- 				'acp',
+				'acp',
 				'ACP_CAT_DOT_MODS',
 				'ACP_NOTES'
 			]],
