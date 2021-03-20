@@ -13,7 +13,6 @@ namespace oxpus\notes\event;
 /**
 * @ignore
 */
-use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

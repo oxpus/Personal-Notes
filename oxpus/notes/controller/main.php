@@ -10,8 +10,6 @@
 
 namespace oxpus\notes\controller;
 
-use Symfony\Component\DependencyInjection\Container;
-
 class main
 {
 	protected $root_path;
@@ -133,9 +131,9 @@ class main
 		* Check the number of notes for this user
 		*/
 		$sql = 'SELECT count(note_id) AS total FROM ' . $this->notes_table . '
-			WHERE note_user_id = ' . (int)$this->user->data['user_id'];
+			WHERE note_user_id = ' . (int) $this->user->data['user_id'];
 		$result = $this->db->sql_query($sql);
-		$total_notes = intval($this->db->sql_fetchfield('total'));
+		$total_notes = $this->db->sql_fetchfield('total');
 		$this->db->sql_freeresult($result);
 
 		if ($total_notes < $this->config['notes'])
@@ -166,7 +164,7 @@ class main
 
 				$any_char = $this->db->get_any_char();
 
-				foreach($split_search as $search_word)
+				foreach ($split_search as $search_word)
 				{
 					$sql_search_terms[] = ' LOWER(' . $sql_search_in . ') ' . $this->db->sql_like_expression($any_char . strtolower($search_word) . $any_char);
 				}
@@ -448,7 +446,7 @@ class main
 
 			if ($display_notes)
 			{
-				for($i = 0; $i < $display_notes; $i++)
+				for ($i = 0; $i < $display_notes; $i++)
 				{
 					$note_date	= $this->user->format_date($notes_data[$i]['note_time']);
 					$note_id	= $notes_data[$i]['note_id'];
@@ -466,7 +464,7 @@ class main
 
 					if ($search_keywords != '')
 					{
-						foreach($split_search as $search_word)
+						foreach ($split_search as $search_word)
 						{
 							$message = preg_replace('#(?!<.*)(' . utf8_normalize_nfc($search_word) . ')(?![^<>]*>)#is', '<span class="posthilit">\1</span>', $message);
 						}
