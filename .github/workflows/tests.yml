@@ -1,7 +1,7 @@
 name: Tests
 
 env:
-    EXTNAME: oxpus/notes # Your extension vendor/package name
+    EXTNAME: oxpus/dlext # Your extension vendor/package name
     SNIFF: 1            # Run code sniffer on your code? 1 or 0
     IMAGE_ICC: 1        # Run icc profile sniffer on your images? 1 or 0
     EPV: 1              # Run EPV (Extension Pre Validator) on your code? 1 or 0
@@ -24,6 +24,12 @@ jobs:
             matrix:
                 include:
                     - php: '7.1'
+                      db: "none"
+                      NOTESTS: 1
+                    - php: '7.3'
+                      db: "none"
+                      NOTESTS: 1
+                    - php: '7.4'
                       db: "none"
                       NOTESTS: 1
 
@@ -117,6 +123,10 @@ jobs:
                       db: "mysql:5.7"
                     - php: '7.4'
                       db: "mysql:8.0"
+                   # - php: '8.0'
+                   #   db: "mysql:5.7"
+                   # - php: '8.1'
+                   #   db: "mysql:5.7"
 
         name: PHP ${{ matrix.php }} - ${{ matrix.db_alias != '' && matrix.db_alias || matrix.db }}
 
