@@ -10,18 +10,18 @@
 
 namespace oxpus\notes\migrations;
 
-class release_3_0_4 extends \phpbb\db\migration\migration
+class release_3_0_6 extends \phpbb\db\migration\migration
 {
-	var $ext_version = '3.0.4';
+	var $ext_version = '3.0.6';
 
 	public function effectively_installed()
 	{
 		return isset($this->config['notes_version']) && version_compare($this->config['notes_version'], $this->ext_version, '>=');
 	}
 
-	static public function depends_on()
+	public static function depends_on()
 	{
-		return ['\oxpus\notes\migrations\release_3_0_3'];
+		return ['\oxpus\notes\migrations\release_3_0_5'];
 	}
 
 	public function update_data()
