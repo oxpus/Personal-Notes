@@ -31,7 +31,6 @@ class main_listener implements EventSubscriberInterface
 		];
 	}
 
-	protected $phpbb_extension_manager;
 	protected $db;
 	protected $helper;
 	protected $template;
@@ -42,7 +41,6 @@ class main_listener implements EventSubscriberInterface
 	/**
 	* Constructor
 	*
-	* @param \phpbb\extension\manager				$phpbb_extension_manager
 	* @param \phpbb\db\driver\driver_interfacer		$db
 	* @param \phpbb\controller\helper				$helper
 	* @param \phpbb\template\template				$template
@@ -51,7 +49,6 @@ class main_listener implements EventSubscriberInterface
 	* @param string									$notes_table
 	*/
 	public function __construct(
-		\phpbb\extension\manager $phpbb_extension_manager,
 		\phpbb\db\driver\driver_interface $db,
 		\phpbb\controller\helper $helper,
 		\phpbb\template\template $template,
@@ -60,7 +57,6 @@ class main_listener implements EventSubscriberInterface
 		$notes_table
 	)
 	{
-		$this->phpbb_extension_manager	= $phpbb_extension_manager;
 		$this->db 						= $db;
 		$this->helper 					= $helper;
 		$this->template 				= $template;
@@ -86,12 +82,6 @@ class main_listener implements EventSubscriberInterface
 	{
 		if ($this->user->data['is_registered'])
 		{
-			$ext_path = $this->phpbb_extension_manager->get_extension_path('oxpus/notes', true);
-
-			$this->template->assign_vars([
-				'EXT_NOTES' => $ext_path,
-			]);
-
 			$ext_main_link = $this->helper->route('oxpus_notes_controller');
 
 			if ($this->user->data['user_popup_notes'])

@@ -20,7 +20,6 @@ services:
         class: oxpus\notes\event\main_listener
         public: true
         arguments:
-            - '@ext.manager'
             - '@dbal.conn'
             - '@controller.helper'
             - '@template'
