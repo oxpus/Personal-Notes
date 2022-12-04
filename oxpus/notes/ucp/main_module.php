@@ -15,9 +15,9 @@ namespace oxpus\notes\ucp;
 */
 class main_module
 {
-	var $u_action;
+	public $u_action;
 
-	function main()
+	public function main()
 	{
 		global $db, $user, $language, $request, $template;
 

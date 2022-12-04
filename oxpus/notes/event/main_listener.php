@@ -86,7 +86,7 @@ class main_listener implements EventSubscriberInterface
 
 			if ($this->user->data['user_popup_notes'])
 			{
-				$u_notes_path	= "javascript:notes()";
+				$u_notes_path	= 'javascript:notes()';
 				$u_notes_popup	= $ext_main_link;
 			}
 			else

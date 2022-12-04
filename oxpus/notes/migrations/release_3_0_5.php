@@ -12,7 +12,7 @@ namespace oxpus\notes\migrations;
 
 class release_3_0_5 extends \phpbb\db\migration\migration
 {
-	var $ext_version = '3.0.5';
+	public $ext_version = '3.0.5';
 
 	public function effectively_installed()
 	{

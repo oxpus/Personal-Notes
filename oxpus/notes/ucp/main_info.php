@@ -12,7 +12,7 @@ namespace oxpus\notes\ucp;
 
 class main_info
 {
-	function module()
+	public function module()
 	{
 		global $config;
 

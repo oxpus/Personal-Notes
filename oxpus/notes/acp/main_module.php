@@ -15,11 +15,11 @@ namespace oxpus\notes\acp;
 */
 class main_module
 {
-	var $u_action;
-	var $edit_lang_id;
-	var $lang_defs;
+	public $u_action;
+	public $edit_lang_id;
+	public $lang_defs;
 
-	function main()
+	public function main()
 	{
 		global $user, $cache, $phpbb_log, $config, $language, $request, $template;
 

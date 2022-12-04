@@ -373,7 +373,7 @@ class main
 
 			$date_j = $this->user->format_date($cur_time, 'j', true);
 			$date_n = $this->user->format_date($cur_time, 'n', true);
-			$date_Y = $this->user->format_date($cur_time, 'Y', true);
+			$date_y = $this->user->format_date($cur_time, 'Y', true);
 			$date_g = $this->user->format_date($cur_time, 'G', true);
 			$date_i = $this->user->format_date($cur_time, 'i', true);
 
@@ -390,7 +390,7 @@ class main
 				'S_NOTE_MEM_MIN'	=> $date_i,
 				'S_NOTE_MEM_DAY'	=> $date_j,
 				'S_NOTE_MEM_MONTH'	=> $date_n,
-				'S_NOTE_MEM_YEAR'	=> $date_Y,
+				'S_NOTE_MEM_YEAR'	=> $date_y,
 
 				'S_BBCODE_ALLOWED'	=> $bbcode_status,
 				'S_BBCODE_IMG'		=> $img_status,
