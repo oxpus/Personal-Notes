@@ -1,7 +1,7 @@
 ANZEIGENAME
 ===================
 
-# phpBB 3.1 Personal Notes Extension
+# phpBB 3.1 - 3.3 Personal Notes Extension
 
 Personal notes for all users
 
