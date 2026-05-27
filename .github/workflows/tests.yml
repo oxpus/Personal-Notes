@@ -6,7 +6,7 @@ on:
       EXTNAME:
         required: true
         type: string
-        default: oxpus/notes
+        default: oxpus/Personal-Notes
       PHPBB_BRANCH:
         required: false
         default: '3.3.x'
